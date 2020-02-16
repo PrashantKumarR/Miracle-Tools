@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="info"
+            type="android.content.pm.ResolveInfo" />
+
+        <variable
+            name="context"
+            type="android.content.Context" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/icon_url"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@{context.packageManager.getApplicationIcon(info.activityInfo.applicationInfo)}"
+            tools:src="@mipmap/ic_launcher_round" />
+
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{context.packageManager.getApplicationLabel(info.activityInfo.applicationInfo)}"
+            tools:text="My App" />
+    </LinearLayout>
+</layout>
