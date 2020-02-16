@@ -24,6 +24,7 @@
             android:id="@+id/icon_url"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:src="@{context.packageManager.getApplicationIcon(info.activityInfo.applicationInfo)}"
             tools:src="@mipmap/ic_launcher_round" />
 
         <TextView

@@ -24,11 +24,6 @@ class AppInfoAdapter(private val appsList: ArrayList<ResolveInfo>) :
         holder.binding.apply {
             info = appsList[position]
             context = holder.itemView.context
-            iconUrl.setImageDrawable(
-                holder.itemView.context.packageManager.getApplicationIcon(
-                    appsList[position].activityInfo.packageName
-                )
-            )
         }
 
     }
