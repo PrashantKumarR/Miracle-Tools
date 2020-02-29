@@ -32,7 +32,6 @@ class AppListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(AppListViewModel::class.java)
-        viewModel.loadAppList()
 
         binding.appListView.apply {
             layoutManager = GridLayoutManager(requireContext(), 4)
@@ -46,7 +45,7 @@ class AppListFragment : Fragment() {
             }
         }
         observeViewModel()
-
+        viewModel.loadAppList()
     }
 
     private fun observeViewModel() {
